@@ -1,0 +1,108 @@
+<html>
+<head><title>libros</title>
+<link REL="stylesheet" href="include/style.css" type="text/css">
+</head>
+
+<body bgcolor=white>
+<form name="editform" encType="multipart/form-data" method="post" action="libros_add.php" {$onsubmit}>
+<TABLE CELLPADDING=0 CELLSPACING=0 align=center border=0>
+<tr><td>
+<b class="xtop"><b class="xb1b"></b><b class="xb2b"></b><b class="xb3b"></b><b class="xb4b"></b></b>
+<div class="xboxcontentb">
+<table cellpadding=0 class="main_table" cellspacing=0 border=0>
+<tr><td>
+<table cellpadding=0 cellspacing=0 border=0 width=100%>
+<tr>
+  <td class=upeditmenu width=100% valign=middle align=center height=35>Biblioteca, Añadir nuevo registro
+</td>
+</tr>
+</table>
+</td></tr>
+<tr><td width=100% height=1px bgcolor=white></td></tr>
+
+<tr><td width=100% align=center style="padding:10px">
+<table cellpadding=0 cellspacing=0 border=0 width=100%><tr><td>
+<b class="xtop"><b class="xb1u"></b><b class="xb2u"></b><b class="xb3u"></b><b class="xb4u"></b></b>
+<div class="xboxcontentb">
+<table cellpadding=5 cellspacing=0 border=0 width=100% align=center>
+<tr><td colspan=2 align=center class=downedit2></td></tr>
+</table>
+</div>
+<b class="xbottom"><b class="xb4u"></b><b class="xb3u"></b><b class="xb2u"></b><b class="xb1u"></b></b>
+</td></tr></table>
+</td></tr>
+{/if}
+
+<tr><td style="padding:10px">
+<div class="xboxcontent">
+<table cellpadding=4 cellspacing=0 border=0>
+
+  <tr>
+    <td class=editshadeleft_b2 width=150 style="padding-left:15px;">Titulo del Libro</td>
+    <td width=250 class=editshaderight_lb2 style="padding-left:10px;">
+    </td></tr>
+  <tr>
+    <td class=editshade_b width=150 style="padding-left:15px;">Autor(es)</td>
+    <td width=250 class=editshade_lb style="padding-left:10px;">
+
+    </td></tr>
+  <tr>
+    <td class=editshade_b width=150 style="padding-left:15px;">Editorial</td>
+    <td width=250 class=editshade_lb style="padding-left:10px;">
+
+    </td></tr>
+  <tr>
+    <td class=editshade_b width=150 style="padding-left:15px;">Lugar de Procedencia</td>
+    <td width=250 class=editshade_lb style="padding-left:10px;">
+    </td></tr>
+  <tr>
+    <td class=editshade_b width=150 style="padding-left:15px;">Fecha de Publicación</td>
+    <td width=250 class=editshade_lb style="padding-left:10px;">
+    </td></tr>
+  <tr>
+    <td class=editshade_b width=150 style="padding-left:15px;">Edicion</td>
+    <td width=250 class=editshade_lb style="padding-left:10px;">
+    </td></tr>
+  <tr>
+    <td class=editshade_b width=150 style="padding-left:15px;">Numero de Paginas</td>
+    <td width=250 class=editshade_lb style="padding-left:10px;">
+    </td></tr>
+  <tr>
+    <td class=editshade_b width=150 style="padding-left:15px;">Clasificacion(Area que Corresponde)</td>
+    <td width=250 class=editshade_lb style="padding-left:10px;">
+    </td></tr>
+  <tr>
+    <td class=editshade_b width=150 style="padding-left:15px;">Tipo</td>
+    <td width=250 class=editshade_lb style="padding-left:10px;">
+    </td></tr>
+  <tr>
+    <td class=editshade_b width=150 style="padding-left:15px;">Fecha de Ingreso</td>
+    <td width=250 class=editshade_lb style="padding-left:10px;">
+      &nbsp;<img src="images/icon_required.gif">
+  </td></tr>
+  <tr>
+    <td class=editshade_b width=150 style="padding-left:15px;">Observaciones</td>
+    <td width=250 class=editshade_lb style="padding-left:10px;">
+    </td></tr>
+<tr><td colspan=2 align=left class=downedit>
+   <img src="images/icon_required.gif"> - Campo de requerimiento
+   </td></tr>
+ <tr><td colspan=2 align=center class=downedit>
+<span class=buttonborder><input class=button type=submit value="&nbsp;&nbsp;Guardar&nbsp;&nbsp;"  name=submit1></span>
+<span class=buttonborder><input class=button type=reset value="&nbsp;&nbsp;Reiniciar&nbsp;&nbsp;"></span>
+ <span class=buttonborder><input class=button type=button value="&nbsp;&nbsp;Volver a la lista&nbsp;&nbsp;" onClick="window.location.href='libros_list.php?a=return'"></span>
+   <input type=hidden name="a" value="added">
+ </td></tr>
+</form>
+ 
+</table>
+</div>
+<b class="xbottom"><b class="xb4a"></b><b class="xb3a"></b><b class="xb2a"></b><b class="xb1a"></b></b>
+</td></tr>
+</table>
+</div>
+<b class="xbottom"><b class="xb4b3"></b><b class="xb3b3"></b><b class="xb2b3"></b><b class="xb1b3"></b></b>
+ </td></tr></table><br>
+</body>
+</html>
+

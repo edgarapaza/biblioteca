@@ -1,0 +1,46 @@
+<edit_controls>
+	<jscode>{$linkdata}</jscode>
+	<control field="num_reg">
+	    <nobr>
+	{build_edit_control field="num_reg" value=$value_num_reg mode="inline_edit" id=$id}
+	    <font color="red">*</font>
+	</nobr>
+	</control>
+	<control field="titulo">
+		{build_edit_control field="titulo" value=$value_titulo mode="inline_edit" id=$id}
+		</control>
+	<control field="autores">
+		{build_edit_control field="autores" value=$value_autores mode="inline_edit" id=$id}
+		</control>
+	<control field="editorial">
+		{build_edit_control field="editorial" value=$value_editorial mode="inline_edit" id=$id}
+		</control>
+	<control field="procedencia">
+		{build_edit_control field="procedencia" value=$value_procedencia mode="inline_edit" id=$id}
+		</control>
+	<control field="fec_publi">
+		{build_edit_control field="fec_publi" value=$value_fec_publi mode="inline_edit" id=$id}
+		</control>
+	<control field="edicion">
+		{build_edit_control field="edicion" value=$value_edicion mode="inline_edit" id=$id}
+		</control>
+	<control field="num_pag">
+		{build_edit_control field="num_pag" value=$value_num_pag mode="inline_edit" id=$id}
+		</control>
+	<control field="clasificacion">
+		{build_edit_control field="clasificacion" value=$value_clasificacion mode="inline_edit" id=$id}
+		</control>
+	<control field="tipo">
+		{build_edit_control field="tipo" value=$value_tipo mode="inline_edit" id=$id}
+		</control>
+	<control field="fec_ingreso">
+	    <nobr>
+	{build_edit_control field="fec_ingreso" value=$value_fec_ingreso mode="inline_edit" id=$id}
+	    <font color="red">*</font>
+	</nobr>
+	</control>
+	<control field="observaciones">
+		{build_edit_control field="observaciones" value=$value_observaciones mode="inline_edit" id=$id}
+		</control>
+	<message status="{$status}">{$message}</message>
+</edit_controls>

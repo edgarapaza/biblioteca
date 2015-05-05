@@ -1,0 +1,301 @@
+<html>
+<head>
+<title>libros: Búsqueda avanzada de página</title>
+</head>
+<link REL="stylesheet" href="include/style.css" type="text/css">
+{$includes}
+<body bgcolor=white {$onload}>
+{include_if_exists file="include/header.php"}
+<!-- search form -->
+<form method="POST" 
+action="libros_list.php" 
+name="editform" {if $noAJAX} onkeydown="OnKeyDown(event);" {/if} >
+	<input type="hidden" id="a" name="a" value="advsearch">
+
+{doevent name="SearchOnLoad"}
+	
+<table CELLPADDING=0 CELLSPACING=0 align='center' width='750'>	
+<tr><td>
+<b class="xtop"><b class="xb1b"></b><b class="xb2b"></b><b class="xb3b"></b><b class="xb4b"></b></b>
+<div class="xboxcontentb">
+	
+<table CELLPADDING=0 CELLSPACING=0 align='center' width='750'">
+<tr valign=center>
+<td colspan=5>
+
+<table width=100% CELLSPACING=0 CELLPADDING=0 class="main_table"><tr>
+<td width=200 class=tableheader>libros</td>
+<td align=center class=tableheader>
+Búsqueda avanzada</td>
+<td width=200 class=tableheader>&nbsp;</td>
+</tr></table>
+
+</td></tr>
+
+<tr><td width=100% height=1px bgcolor=white colspan=5></td></tr>
+
+<tr><td colspan=5 align=center valign=middle>
+
+<table width=100% cellpadding=7><tr><td align=center>
+
+<b class="xtop"><b class="xb1"></b><b class="xb2"></b><b class="xb3"></b><b class="xb4"></b></b>
+<div class="xboxcontent">
+<span class=fieldname>Buscar por: </span>
+<input type="radio" name="type" value="and" {$all_checked}>Todas las condiciones
+&nbsp;&nbsp;&nbsp;
+<input type="radio" name="type" value="or" {$any_checked}>Ninguna condición
+</div>
+<b class="xbottom"><b class="xb4"></b><b class="xb3"></b><b class="xb2"></b><b class="xb1"></b></b>
+
+</td></tr></table>
+</td></tr>
+<tr><td>
+<table cellpadding=7 class="main_table">
+<tr><td>
+<div class="xboxcontent">
+<table cellpadding=7 cellspacing=0 border=0>
+<tr valign=center>
+<td align=center valign=middle class="headerlist_left">&nbsp;</td>
+<td width=30 align=center valign=middle class=headerlist2>NOT</td>
+<td align=center valign=middle class="headerlist">&nbsp; </td>
+<td align=center valign=middle class="headerlist">&nbsp; </td>
+<td align=center valign=middle class="headerlist_right">&nbsp; </td></tr>
+
+		
+<tr>
+	<td class=editshade_b style="padding-left:15px;">num_reg
+	<input type="Hidden" name="asearchfield[]" value="num_reg"></td>
+	<td align=center class=editshade_lb style="padding-left:10px;"><input type=CheckBox name="not_num_reg" {$not_num_reg}></td>
+	
+	<td class=editshade_lb style="padding-left:10px;">
+	{$searchtype_num_reg}
+	</td>
+	
+	<td width=270 class=editshade_lb style="padding-left:10px;">{build_edit_control field="num_reg" value=$value_num_reg mode="search"}</td>
+
+	<td width=270 class=editshade_lb style="padding-left:10px;"><span id="second_num_reg">
+	{build_edit_control field="num_reg" second=true value=$value1_num_reg mode="search"}
+	</span></td>
+	
+	
+</tr>
+		
+<tr>
+	<td class=editshade_b style="padding-left:15px;">titulo
+	<input type="Hidden" name="asearchfield[]" value="titulo"></td>
+	<td align=center class=editshade_lb style="padding-left:10px;"><input type=CheckBox name="not_titulo" {$not_titulo}></td>
+	
+	<td class=editshade_lb style="padding-left:10px;">
+	{$searchtype_titulo}
+	</td>
+	
+	<td width=270 class=editshade_lb style="padding-left:10px;">{build_edit_control field="titulo" value=$value_titulo mode="search"}</td>
+
+	<td width=270 class=editshade_lb style="padding-left:10px;"><span id="second_titulo">
+	{build_edit_control field="titulo" second=true value=$value1_titulo mode="search"}
+	</span></td>
+	
+	
+</tr>
+		
+<tr>
+	<td class=editshade_b style="padding-left:15px;">autores
+	<input type="Hidden" name="asearchfield[]" value="autores"></td>
+	<td align=center class=editshade_lb style="padding-left:10px;"><input type=CheckBox name="not_autores" {$not_autores}></td>
+	
+	<td class=editshade_lb style="padding-left:10px;">
+	{$searchtype_autores}
+	</td>
+	
+	<td width=270 class=editshade_lb style="padding-left:10px;">{build_edit_control field="autores" value=$value_autores mode="search"}</td>
+
+	<td width=270 class=editshade_lb style="padding-left:10px;"><span id="second_autores">
+	{build_edit_control field="autores" second=true value=$value1_autores mode="search"}
+	</span></td>
+	
+	
+</tr>
+		
+<tr>
+	<td class=editshade_b style="padding-left:15px;">editorial
+	<input type="Hidden" name="asearchfield[]" value="editorial"></td>
+	<td align=center class=editshade_lb style="padding-left:10px;"><input type=CheckBox name="not_editorial" {$not_editorial}></td>
+	
+	<td class=editshade_lb style="padding-left:10px;">
+	{$searchtype_editorial}
+	</td>
+	
+	<td width=270 class=editshade_lb style="padding-left:10px;">{build_edit_control field="editorial" value=$value_editorial mode="search"}</td>
+
+	<td width=270 class=editshade_lb style="padding-left:10px;"><span id="second_editorial">
+	{build_edit_control field="editorial" second=true value=$value1_editorial mode="search"}
+	</span></td>
+	
+	
+</tr>
+		
+<tr>
+	<td class=editshade_b style="padding-left:15px;">procedencia
+	<input type="Hidden" name="asearchfield[]" value="procedencia"></td>
+	<td align=center class=editshade_lb style="padding-left:10px;"><input type=CheckBox name="not_procedencia" {$not_procedencia}></td>
+	
+	<td class=editshade_lb style="padding-left:10px;">
+	{$searchtype_procedencia}
+	</td>
+	
+	<td width=270 class=editshade_lb style="padding-left:10px;">{build_edit_control field="procedencia" value=$value_procedencia mode="search"}</td>
+
+	<td width=270 class=editshade_lb style="padding-left:10px;"><span id="second_procedencia">
+	{build_edit_control field="procedencia" second=true value=$value1_procedencia mode="search"}
+	</span></td>
+	
+	
+</tr>
+		
+<tr>
+	<td class=editshade_b style="padding-left:15px;">fec_publi
+	<input type="Hidden" name="asearchfield[]" value="fec_publi"></td>
+	<td align=center class=editshade_lb style="padding-left:10px;"><input type=CheckBox name="not_fec_publi" {$not_fec_publi}></td>
+	
+	<td class=editshade_lb style="padding-left:10px;">
+	{$searchtype_fec_publi}
+	</td>
+	
+	<td width=270 class=editshade_lb style="padding-left:10px;">{build_edit_control field="fec_publi" value=$value_fec_publi mode="search"}</td>
+
+	<td width=270 class=editshade_lb style="padding-left:10px;"><span id="second_fec_publi">
+	{build_edit_control field="fec_publi" second=true value=$value1_fec_publi mode="search"}
+	</span></td>
+	
+	
+</tr>
+		
+<tr>
+	<td class=editshade_b style="padding-left:15px;">edicion
+	<input type="Hidden" name="asearchfield[]" value="edicion"></td>
+	<td align=center class=editshade_lb style="padding-left:10px;"><input type=CheckBox name="not_edicion" {$not_edicion}></td>
+	
+	<td class=editshade_lb style="padding-left:10px;">
+	{$searchtype_edicion}
+	</td>
+	
+	<td width=270 class=editshade_lb style="padding-left:10px;">{build_edit_control field="edicion" value=$value_edicion mode="search"}</td>
+
+	<td width=270 class=editshade_lb style="padding-left:10px;"><span id="second_edicion">
+	{build_edit_control field="edicion" second=true value=$value1_edicion mode="search"}
+	</span></td>
+	
+	
+</tr>
+		
+<tr>
+	<td class=editshade_b style="padding-left:15px;">num_pag
+	<input type="Hidden" name="asearchfield[]" value="num_pag"></td>
+	<td align=center class=editshade_lb style="padding-left:10px;"><input type=CheckBox name="not_num_pag" {$not_num_pag}></td>
+	
+	<td class=editshade_lb style="padding-left:10px;">
+	{$searchtype_num_pag}
+	</td>
+	
+	<td width=270 class=editshade_lb style="padding-left:10px;">{build_edit_control field="num_pag" value=$value_num_pag mode="search"}</td>
+
+	<td width=270 class=editshade_lb style="padding-left:10px;"><span id="second_num_pag">
+	{build_edit_control field="num_pag" second=true value=$value1_num_pag mode="search"}
+	</span></td>
+	
+	
+</tr>
+		
+<tr>
+	<td class=editshade_b style="padding-left:15px;">clasificacion
+	<input type="Hidden" name="asearchfield[]" value="clasificacion"></td>
+	<td align=center class=editshade_lb style="padding-left:10px;"><input type=CheckBox name="not_clasificacion" {$not_clasificacion}></td>
+	
+	<td class=editshade_lb style="padding-left:10px;">
+	{$searchtype_clasificacion}
+	</td>
+	
+	<td width=270 class=editshade_lb style="padding-left:10px;">{build_edit_control field="clasificacion" value=$value_clasificacion mode="search"}</td>
+
+	<td width=270 class=editshade_lb style="padding-left:10px;"><span id="second_clasificacion">
+	{build_edit_control field="clasificacion" second=true value=$value1_clasificacion mode="search"}
+	</span></td>
+	
+	
+</tr>
+		
+<tr>
+	<td class=editshade_b style="padding-left:15px;">tipo
+	<input type="Hidden" name="asearchfield[]" value="tipo"></td>
+	<td align=center class=editshade_lb style="padding-left:10px;"><input type=CheckBox name="not_tipo" {$not_tipo}></td>
+	
+	<td class=editshade_lb style="padding-left:10px;">
+	{$searchtype_tipo}
+	</td>
+	
+	<td width=270 class=editshade_lb style="padding-left:10px;">{build_edit_control field="tipo" value=$value_tipo mode="search"}</td>
+
+	<td width=270 class=editshade_lb style="padding-left:10px;"><span id="second_tipo">
+	{build_edit_control field="tipo" second=true value=$value1_tipo mode="search"}
+	</span></td>
+	
+	
+</tr>
+		
+<tr>
+	<td class=editshade_b style="padding-left:15px;">fec_ingreso
+	<input type="Hidden" name="asearchfield[]" value="fec_ingreso"></td>
+	<td align=center class=editshade_lb style="padding-left:10px;"><input type=CheckBox name="not_fec_ingreso" {$not_fec_ingreso}></td>
+	
+	<td class=editshade_lb style="padding-left:10px;">
+	{$searchtype_fec_ingreso}
+	</td>
+	
+	<td width=270 class=editshade_lb style="padding-left:10px;">{build_edit_control field="fec_ingreso" value=$value_fec_ingreso mode="search"}</td>
+
+	<td width=270 class=editshade_lb style="padding-left:10px;"><span id="second_fec_ingreso">
+	{build_edit_control field="fec_ingreso" second=true value=$value1_fec_ingreso mode="search"}
+	</span></td>
+	
+	
+</tr>
+		
+<tr>
+	<td class=editshade_b style="padding-left:15px;">observaciones
+	<input type="Hidden" name="asearchfield[]" value="observaciones"></td>
+	<td align=center class=editshade_lb style="padding-left:10px;"><input type=CheckBox name="not_observaciones" {$not_observaciones}></td>
+	
+	<td class=editshade_lb style="padding-left:10px;">
+	{$searchtype_observaciones}
+	</td>
+	
+	<td width=270 class=editshade_lb style="padding-left:10px;">{build_edit_control field="observaciones" value=$value_observaciones mode="search"}</td>
+
+	<td width=270 class=editshade_lb style="padding-left:10px;"><span id="second_observaciones">
+	{build_edit_control field="observaciones" second=true value=$value1_observaciones mode="search"}
+	</span></td>
+	
+	
+</tr>
+
+<tr><td colspan=5 align=center class=downedit>
+<input type=button class=button name="SearchButton" value="&nbsp;&nbsp;Buscar&nbsp;&nbsp;"
+onClick="javascript:document.forms.editform.submit();">
+<input class=button type=button value="&nbsp;&nbsp;Reiniciar&nbsp;&nbsp;" onclick="return ResetControls();">
+<input type=button class=button value="&nbsp;&nbsp;Volver a la lista&nbsp;&nbsp;" onClick="javascript: document.forms.editform.a.value='return'; document.forms.editform.submit();">
+</td></tr>
+</table>
+</div>
+<b class="xbottom"><b class="xb4a"></b><b class="xb3a"></b><b class="xb2a"></b><b class="xb1a"></b></b>
+</td></tr></table>
+</td></tr></table>
+</div>
+<b class="xbottom"><b class="xb4b4"></b><b class="xb3b4"></b><b class="xb2b4"></b><b class="xb1b4"></b></b>
+</td></tr>
+</table>
+</form>
+{include_if_exists file="include/footer.php"}
+{$linkdata}
+
+</body>
+</html>
