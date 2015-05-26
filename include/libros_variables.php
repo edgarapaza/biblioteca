@@ -11,9 +11,9 @@ $ColumnsCount		= 1;
 $gstrOrderBy="";
 if(strlen($gstrOrderBy) && strcasecmp(substr($gstrOrderBy,0,8),"order by"))
 	$gstrOrderBy="order by ".$gstrOrderBy;
-	
-$gsqlHead="select *";
-$gsqlFrom="From `libros`";
+
+$gsqlHead="SELECT *";
+$gsqlFrom="FROM libros";
 $gsqlWhere="";
 $gsqlTail="";
 // $gstrSQL = "select `num_reg`,   `titulo`,   `autores`,   `editorial`,   `procedencia`,   `fec_publi`,   `edicion`,   `num_pag`,   `clasificacion`,   `tipo`,   `fec_ingreso`,   `observaciones`  From `libros`";
